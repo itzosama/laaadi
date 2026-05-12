@@ -29,7 +29,7 @@ export default function Hero({ lenisRef }: HeroProps) {
 
   const cyclingTextRef = useRef<HTMLSpanElement>(null)
   const [currentWordIndex, setCurrentWordIndex] = useState(0)
-  const words = ["find it.", "fix it.", "solve it."]
+  const words = ["I find it.", "I analyze it.", "I solve it."]
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -121,7 +121,7 @@ export default function Hero({ lenisRef }: HeroProps) {
         hours every week.
         <br />
         <em style={{ fontStyle: 'italic', fontWeight: 700 }}>
-          I{' '}
+          {' '}
           <span 
             className="inline-block relative overflow-hidden text-[#10b981]" 
             style={{ verticalAlign: 'bottom', height: '1.2em', minWidth: '4.5ch' }}

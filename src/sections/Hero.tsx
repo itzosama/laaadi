@@ -1,8 +1,8 @@
-import { useEffect, useRef, type MutableRefObject } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 
 interface HeroProps {
-  lenisRef: MutableRefObject<any>
+  lenisRef: any
 }
 
 export default function Hero({ lenisRef }: HeroProps) {
@@ -26,6 +26,35 @@ export default function Hero({ lenisRef }: HeroProps) {
 
     return () => { tl.kill() }
   }, [])
+
+  const cyclingTextRef = useRef<HTMLSpanElement>(null)
+  const [currentWordIndex, setCurrentWordIndex] = useState(0)
+  const words = ["find it.", "fix it.", "solve it."]
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const nextIndex = (currentWordIndex + 1) % words.length
+      
+      const tl = gsap.timeline()
+      tl.to(cyclingTextRef.current, {
+        y: 20,
+        opacity: 0,
+        duration: 0.4,
+        ease: 'power2.in',
+        onComplete: () => {
+          setCurrentWordIndex(nextIndex)
+          gsap.set(cyclingTextRef.current, { y: -20, opacity: 0 })
+        }
+      }).to(cyclingTextRef.current, {
+        y: 0,
+        opacity: 1,
+        duration: 0.4,
+        ease: 'power2.out'
+      })
+    }, 2500)
+
+    return () => clearInterval(interval)
+  }, [currentWordIndex])
 
   const scrollTo = (href: string) => {
     if (lenisRef.current) {
@@ -92,7 +121,18 @@ export default function Hero({ lenisRef }: HeroProps) {
         hours every week.
         <br />
         <em style={{ fontStyle: 'italic', fontWeight: 700 }}>
-           <span className="text-[#10b981]">I find it and fix it.</span>
+          I{' '}
+          <span 
+            className="inline-block relative overflow-hidden text-[#10b981]" 
+            style={{ verticalAlign: 'bottom', height: '1.2em', minWidth: '4.5ch' }}
+          >
+            <span 
+              ref={cyclingTextRef} 
+              className="inline-block"
+            >
+              {words[currentWordIndex]}
+            </span>
+          </span>
         </em>
       </h1>
 

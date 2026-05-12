@@ -37,7 +37,7 @@ export default function Founder() {
               Why I focus on <span className="text-[#10b981]">GCC businesses</span>
             </h2>
             <p className="text-[#e7e9ee] text-lg font-light leading-relaxed mb-6">
-              I've seen too many businesses in the region struggle with manual processes that drain their energy and profit. My mission is to bridge the gap between world-class AI tools and local business needs.
+              I've seen too many businesses in the region struggle with manual processes that drain their energy and profit. My mission is to bridge the gap between world-class AI tools and local [...]
             </p>
             <p className="text-[#e7e9ee] text-lg font-light leading-relaxed mb-8">
               Whether you're in Dubai, Riyadh, or Kuwait City, manual work is the same silent killer. I help you eliminate it so you can focus on growth.
@@ -45,7 +45,7 @@ export default function Founder() {
 
           </div>
           <div className="w-full md:w-1/2 h-[400px] bg-[rgba(16,185,129,0.05)] rounded-3xl border border-[rgba(16,185,129,0.1)] flex items-center justify-center text-6xl">
-            <img src="/laaadi.png" alt="Founder" />
+            <img src="./laaadi.png" alt="Founder" />
           </div>
         </div>
       </div>

@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react"
 import { defineConfig } from "vite"
 import { inspectAttr } from 'kimi-plugin-inspect-react'
 
-// https://vite.dev/config/
+// Deployment trigger: 2026-05-12
 export default defineConfig({
   base: '/laaadi/',
   plugins: [inspectAttr(), react()],

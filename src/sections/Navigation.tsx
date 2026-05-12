@@ -72,7 +72,7 @@ export default function Navigation({ lenisRef }: NavigationProps) {
           onClick={(e) => { e.preventDefault(); scrollTo('#hero') }}
           className="flex items-center"
         >
-          <img src="/laaadi.png" alt="laaadi" style={{ height: 34, width: 'auto' }} />
+          <img src="./laaadi.png" alt="laaadi" style={{ height: 34, width: 'auto' }} />
         </a>
 
         {/* Desktop nav links */}
